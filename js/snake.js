@@ -9,16 +9,36 @@ function Snake() {
 
     this.move = function() {
         if (this.direction == 1) {
-            this.y -= step;
+            if (this.y < 0) {
+                this.y = 600;
+            }
+            else {
+                this.y -= step;
+            }
         }
         else if (this.direction == 2) {
-            this.x += step;
+            if (this.x > 600) {
+                this.x = 0;
+            }
+            else {
+                this.x += step;
+            }
         }
         else if (this.direction == 3) {
-            this.y += step;
+            if (this.y > 600) {
+                this.y = 0;
+            }
+            else {
+                this.y += step;
+            }
         }
         else if (this.direction == 4) {
-            this.x -= step;
+            if (this.x < 0) {
+                this.x = 600;
+            }
+            else {
+                this.x -= step;
+            }
         }
     }
 
