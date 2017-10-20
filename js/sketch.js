@@ -9,6 +9,7 @@ function setup() {
 
     // Create the main snake object.
     mySnake = new Snake();
+
     // Create the starting food object.
     myFood = new Food();
     myFood.create();
@@ -22,10 +23,18 @@ function draw() {
     mySnake.move();
     mySnake.draw();
 
+    if (mySnake.crash()) {
+        console.log('Game over!')
+    }
+
     // Check capture.
     if (mySnake.capture(myFood.x, myFood.y)) {
+        mySnake.expand(myFood.x, myFood.y);
         myFood.create();
     }
+
+    // Redraw queue.
+    mySnake.moveQueue();
 
     // Draw food.    
     myFood.draw();
