@@ -13,6 +13,6 @@ function Food () {
 
     this.draw = function() {
         fill(255, 0, 0);
-        rect(this.x, this.y, step, step);
+        image(dollar, this.x, this.y, step / 2, step / 2);
     }
 }

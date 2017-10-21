@@ -1,4 +1,5 @@
 let mySnake, myFood;
+let dollar;
 const step = 10;
 
 function setup() {
@@ -13,6 +14,8 @@ function setup() {
     // Create the starting food object.
     myFood = new Food();
     myFood.create();
+
+    dollar = loadImage("images/dollar.png"); 
 }
   
 function draw() {
